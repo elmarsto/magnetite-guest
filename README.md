@@ -12,7 +12,7 @@ This repo is a blank cassette. Fork it and lay down something funcy :D
 cd <vault>/.obsidian/plugins/
 git clone https://github.com/elmarsto/magnetite-host <your-plugin-name>
 cd <your-plugin-name>
-git submodule add -f https://github.com/<your-gh-handle>/<your-fork-of-this-repo> magnetite-guest
+git submodule add -f https://github.com/<your-gh-handle>/<your-fork-of-this-repo> ./magnetite-guest
 git submodule update --init --recursive
 ```
 
