@@ -1,18 +1,26 @@
-# Magnetite Guest (fork this repo!)
+# Magnetite Guest Reference Implementation (i.e., fork this repo!)
 
-This is the reference guest for Magnetite, which is a system of [Rust](https://www.rust-lang.org/) bindings for [Obsidian.md](https://obsidian.md/) plugin development. It works in conjunction with the [Magnetite Host](https://github.com/elmarsto/magnetite-host/). The idea being that the host does the "JavaScript part" and the guest is the "Rust part". Mostly you can leave the JavaScript part as-is, unless you're releasing a new Obsidian plugin (in which case, congratulations!) So concentrate your efforts here ;D
+This is the reference implementation of a Magnetite Guest.
 
-The idea is the magnetite host can be cloned directly into your Obsidian vault's plugins directory without any changes other than symlinking, copying, mounting, `git submodule`ing, or otherwise manifesting their
-guest (i.e. their Rust lib, i.e. presumably a fork of this repo, or equivalent) at `<magnetite-host-directory>/magnetite-guest`.
+It works in conjunction with the [Magnetite Library](https://github.com/elmarsto/magnetite-lib/) and [Magnetite Host](https://github.com/elmarsto/magnetite-host/) to construe a system of [Rust](https://www.rust-lang.org/) bindings for [Obsidian.md](https://obsidian.md/) plugin development.
 
-So, for example, if your plugin name was `foo`, you might want to move this directory into position such that its path becomes:
+The idea being that the host does the "JavaScript part" and the Guest -- i.e., your fork of this very repo -- is the "Rust part".
 
-`~/my-badass-vault/.obsidian/plugins/foo/magnetite-guest`
+Metaphorically, the Host, the JavaScript part, is the tape deck. You can leave it mostly as-is, unless you're releasing a new Obsidian plugin for public consumption. Otherwise, concentrate your attention here.
 
-i.e., this very README.md should be
+This repo is a blank cassette. Fork it and lay down something funcy :D
 
-`~/my-badass-vault/.obsidian/plugins/foo/magnetite-guest/README.md`
+For example, if your plugin name was `foo`, you might want to:
 
-If you're releasing something, you can use git submodules to permanently associate your guest's repository with a forked/modded copy of the host.
+```
+VAULT=~/my-badass-vault/
+PLUGINS=$VAULT/.obsidian/plugins/
+cd $PLUGINS
+git clone https://github.com/elmarsto/magnetite-host foo
+cd foo
+git submodule update --init --recursive
+```
 
-If you're just developing something a symlink (or even just a copy) tucked into a well-placed clone is often all you need to test out your idea.
+After which you will find this very README.md at `~/my-badass-vault/.obsidian/plugins/foo/magnetite-guest/README.md`
+
+
