@@ -1,0 +1,3 @@
+[submodule "magnetite-lib"]
+	path = magnetite-lib
+	url = https://github.com/elmarsto/magnetite-lib/
