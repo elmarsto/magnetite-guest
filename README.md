@@ -1,6 +1,6 @@
-# Magnetite Guest (Fork this repo)
+# Magnetite Guest (fork this repo!)
 
-This is an example guest for Magnetite, which in turn are rust bindings for Obsidian.md plugin development. It works in conjunction with the [Magnetite Host](https://github.com/elmarsto/magnetite-host/)
+This is the reference guest for Magnetite, which is a system of [Rust](https://www.rust-lang.org/) bindings for [Obsidian.md](https://obsidian.md/) plugin development. It works in conjunction with the [Magnetite Host](https://github.com/elmarsto/magnetite-host/). The idea being that the host does the "JavaScript part" and the guest is the "Rust part". Mostly you can leave the JavaScript part as-is, unless you're releasing a new Obsidian plugin (in which case, congratulations!) So concentrate your efforts here ;D
 
 The idea is the magnetite host can be cloned directly into your Obsidian vault's plugins directory without any changes other than symlinking, copying, mounting, `git submodule`ing, or otherwise manifesting their
 guest (i.e. their Rust lib, i.e. presumably a fork of this repo, or equivalent) at `<magnetite-host-directory>/magnetite-guest`.
