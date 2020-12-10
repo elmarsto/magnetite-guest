@@ -1,1 +1,1 @@
-Magnetite plugin 
+This is the guest for magnetite, which in turn are rust bindings for Obsidian.md plugin development.

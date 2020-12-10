@@ -1,7 +1,7 @@
 [package]
 name = "magnetite"
 version = "0.1.0"
-authors = ["Elizabeth Marston <elmarsto@microsoft.com>"]
+authors = ["Elizabeth Marston <liz.mars@pm.me>"]
 edition = "2018"
 
 [lib]
@@ -12,6 +12,9 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2.63"
+js-sys = "0.3.46"
+web-sys = "0.3.46"
+magnetite-lib = { git = "https://github.com/elmarsto/magnetite-lib", branch = "main" }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
