@@ -1,6 +1,7 @@
 mod utils;
 
 use wasm_bindgen::prelude::*;
+use utils::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
 // allocator.
@@ -14,6 +15,7 @@ extern {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
+pub fn onload() {
+    set_panic_hook();
     alert("Hello, magnetite!");
 }
