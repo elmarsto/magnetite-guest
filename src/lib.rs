@@ -16,7 +16,11 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 pub fn onload(magnetite_host: &Plugin) {
     set_panic_hook();
-    let w = window().expect("no window");
-    w.alert_with_message("Hello, Obsidian!, Love, Magnetite").expect("it said hi");
     magnetite_host.add_ribbon_icon(&JsString::from("dice"),&JsString::from("Magnetite"));
+}
+
+#[wasm_bindgen]
+pub fn onunload() {
+    let w = window().expect("no window");
+    w.alert_with_message("See you next time! Love, Magnetite").expect("we said bye");
 }
