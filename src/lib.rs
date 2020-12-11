@@ -2,6 +2,7 @@ mod utils;
 
 use wasm_bindgen::prelude::*;
 use web_sys::*;
+use js_sys::*;
 use magnetite_lib::*;
 use utils::*;
 
@@ -11,9 +12,11 @@ use utils::*;
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
+
 #[wasm_bindgen]
-pub fn onload() {
+pub fn onload(magnetite_host: &Plugin) {
     set_panic_hook();
     let w = window().expect("no window");
     w.alert_with_message("Hello, Obsidian!, Love, Magnetite").expect("it said hi");
+    magnetite_host.add_ribbon_icon(&JsString::from("dice"),&JsString::from("Magnetite"));
 }
