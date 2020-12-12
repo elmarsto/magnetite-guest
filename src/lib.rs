@@ -2,8 +2,7 @@ mod utils;
 
 use wasm_bindgen::prelude::*;
 use web_sys::*;
-use js_sys::*;
-use magnetite_lib::*;
+use magnetite_lib::ob_sys::*;
 use utils::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -16,7 +15,7 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 pub fn onload(magnetite_host: &Plugin) {
     set_panic_hook();
-    magnetite_host.add_ribbon_icon(&JsString::from("dice"),&JsString::from("Magnetite"));
+    magnetite_host.Plugin_addRibbonIcon("dice", "Magnetite");
 }
 
 #[wasm_bindgen]
